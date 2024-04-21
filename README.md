@@ -1,20 +1,8 @@
-# SPINEN's Laravel QuickBooks Client
-
-[![Latest Stable Version](https://poser.pugx.org/spinen/laravel-quickbooks-client/v/stable)](https://packagist.org/packages/spinen/laravel-quickbooks-client)
-[![Latest Unstable Version](https://poser.pugx.org/spinen/laravel-quickbooks-client/v/unstable)](https://packagist.org/packages/spinen/laravel-quickbooks-client)
-[![Total Downloads](https://poser.pugx.org/spinen/laravel-quickbooks-client/downloads)](https://packagist.org/packages/spinen/laravel-quickbooks-client)
-[![License](https://poser.pugx.org/spinen/laravel-quickbooks-client/license)](https://packagist.org/packages/spinen/laravel-quickbooks-client)
-
-PHP client wrapping the [QuickBooks PHP SDK](https://github.com/intuit/QuickBooks-V3-PHP-SDK).
-
-We solely use [Laravel](https://www.laravel.com) for our applications, so this package is written with Laravel in mind. If there is a request from the community to split this package into 2 parts to allow it to be used outside of Laravel, then we will consider doing that work.
+# Brad's fork of SPINEN's laravel qb client
 
 ## Build Status
 
-| Branch | Status | Coverage | Code Quality |
-| ------ | :----: | :------: | :----------: |
-| Develop | [![Build Status](https://github.com/spinen/laravel-quickbooks-client/workflows/CI/badge.svg?branch=develop)](https://github.com/spinen/laravel-quickbooks-client/workflows/CI/badge.svg?branch=develop) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/badges/coverage.png?b=develop)](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/?branch=develop) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/badges/quality-score.png?b=develop)](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/?branch=develop) |
-| Master | [![Build Status](https://github.com/spinen/laravel-quickbooks-client/workflows/CI/badge.svg?branch=master)](https://github.com/spinen/laravel-quickbooks-client/workflows/CI/badge.svg?branch=master) | [![Code Coverage](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/?branch=master) | [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/spinen/laravel-quickbooks-client/?branch=master) |
+No guarantees at this point, the setup works so far.
 
 ## Installation
 
@@ -27,7 +15,7 @@ $ composer require spinen/laravel-quickbooks-client
 2. Run our migration to install the `quickbooks_tokens` table:
 
 ```bash
-$ php artisan migrate --package=spinen/laravel-quickbooks-client
+$ php artisan vendor:publish --provider="Spinen\QuickBooks\Providers\ServiceProvider"
 ```
 
 The package uses the [auto registration feature](https://laravel.com/docs/packages#package-discovery) of Laravel.
@@ -59,22 +47,6 @@ class User extends Authenticatable
     ```bash
     QUICKBOOKS_API_URL=<Development|Production> # Defaults to App's env value
     QUICKBOOKS_DEBUG=<true|false>               # Defaults to App's debug value
-    ```
-
-3. _[Optional]_ Publish configs & views
-
-    #### Config
-    A configuration file named ```quickbooks.php``` can be published to ```config/``` by running...
-
-    ```bash
-    php artisan vendor:publish --tag=quickbooks-config
-    ```
-
-    #### Views
-    View files can be published by running...
-
-    ```bash
-    php artisan vendor:publish --tag=quickbooks-views
     ```
 
 ## Usage
