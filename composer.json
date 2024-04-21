@@ -1,6 +1,6 @@
 {
-  "name": "spinen/laravel-quickbooks-client",
-  "description": "SPINEN's Laravel Client for QuickBooks.",
+  "name": "sucitivel/quickbooks-api-laravel-11",
+  "description": "Sucitivel fork of SPINEN laravel client",
   "keywords": [
     "quickbooks",
     "client",
@@ -10,25 +10,25 @@
   "license": "MIT",
   "authors": [
     {
-      "name": "Jimmy Puckett",
-      "email": "jimmy.puckett@spinen.com"
+      "name": "Brad Zasada",
+      "email": "brad@cannabisbrothers.co"
     }
   ],
   "require": {
-    "php": "^8.0.2",
-    "illuminate/database": "^9.19",
-    "illuminate/http": "^9.19",
-    "illuminate/routing": "^9.19",
-    "illuminate/support": "^9.19",
-    "nesbot/carbon": "^2.62.1",
-    "quickbooks/v3-php-sdk": "^5.4.6"
+    "php": "^8.2",
+    "illuminate/database": "11.4",
+    "illuminate/http": "11.4",
+    "illuminate/routing": "11.4",
+    "illuminate/support": "11.4",
+    "nesbot/carbon": "*",
+    "quickbooks/v3-php-sdk": "6.1.2"
   },
   "require-dev": {
-    "laravel/pint": "^1.2",
-    "mockery/mockery": "^1.5.1",
-    "phpunit/phpunit": "^9.5.8",
-    "psy/psysh": "^0.11",
-    "scrutinizer/ocular": "^1.9"
+    "laravel/pint": "*",
+    "mockery/mockery": "*",
+    "phpunit/phpunit": "*",
+    "psy/psysh": "*",
+    "scrutinizer/ocular": "*"
   },
   "autoload": {
     "psr-4": {
